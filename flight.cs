@@ -74,6 +74,7 @@ namespace airlinesystem
             string datetimeT = dateTimeArr.Text;
             string id_airline = comboBoxAirline.Text;
             string status = comboBoxStatus.Text;
+            string pay = textBoxCost.Text;
 
             conn.Open();
 
@@ -88,6 +89,12 @@ namespace airlinesystem
             command.Parameters.AddWithValue("@airL", id_airline);
             command.Parameters.AddWithValue("@s", status);
 
+            string query1 = "INSERT INTO [pay] (flight_id, pay) VALUES (@idF, @pay)";
+            SqlCommand command1 = new SqlCommand(query1, conn);
+            command1.Parameters.AddWithValue("@idF", id_r);
+            command1.Parameters.AddWithValue("@pay", pay);
+
+
             MessageBox.Show("Сохранено", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
             textBoxID_F.Text = "";
             comboBoxID_P.Text = "";
@@ -97,8 +104,10 @@ namespace airlinesystem
             dateTimeArr.Text = "";
             comboBoxAirline.Text = "";
             comboBoxStatus.Text = "";
+            textBoxCost.Text = "";
 
             command.ExecuteNonQuery();
+            command1.ExecuteNonQuery();
 
             conn.Close();
         }

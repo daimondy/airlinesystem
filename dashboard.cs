@@ -160,6 +160,7 @@ namespace airlinesystem
                 viewGrid.Columns[5].Visible = true;
                 viewGrid.Columns[6].Visible = true;
                 viewGrid.Columns[7].Visible = true;
+
                 viewGrid.Columns[0].HeaderText = "Рейс ID";
                 viewGrid.Columns[1].HeaderText = "Самолёт ID";
                 viewGrid.Columns[2].HeaderText = "Авиакомпания ID";
@@ -168,7 +169,8 @@ namespace airlinesystem
                 viewGrid.Columns[5].HeaderText = "Время прибытия";
                 viewGrid.Columns[6].HeaderText = "Время отправления";
                 viewGrid.Columns[7].HeaderText = "Статус";
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [flight]", conn);
+               // SELECT* FROM Table1 t1 JOIN Table2 t2 ON t1.USERS = t2.USERS
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [flight] JOIN * [pay] ON ", conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet dataset = new DataSet();
                 adapter.Fill(dataset);
@@ -183,7 +185,7 @@ namespace airlinesystem
                     string a_city = dataset.Tables[0].Rows[i].ItemArray[4].ToString();
                     string d_dt = dataset.Tables[0].Rows[i].ItemArray[5].ToString();
                     string a_dt = dataset.Tables[0].Rows[i].ItemArray[6].ToString();
-                    string s = dataset.Tables[0].Rows[i].ItemArray[7].ToString();
+                    //string s = dataset.Tables[0].Rows[i].ItemArray[7].ToString();
 
                     DataGridViewRow dataPush = new DataGridViewRow();
                     dataPush.CreateCells(viewGrid);
@@ -194,9 +196,25 @@ namespace airlinesystem
                     dataPush.Cells[4].Value = a_city;
                     dataPush.Cells[5].Value = d_dt;
                     dataPush.Cells[6].Value = a_dt;
-                    dataPush.Cells[7].Value = s;
+                   // dataPush.Cells[7].Value = s;
                     viewGrid.Rows.Add(dataPush);
                 }
+
+                //viewGrid.Columns[8].Visible = true;
+                //viewGrid.Columns[8].HeaderText = "Цена";
+                SqlCommand cmd1 = new SqlCommand("SELECT * FROM [pay]", conn);
+                SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
+                DataSet dataset1 = new DataSet();
+                adapter1.Fill(dataset1);
+
+                for (int i = 0; i < dataset1.Tables[0].Rows.Count; i++)
+                {
+                    string pay = dataset1.Tables[0].Rows[i].ItemArray[7].ToString();
+                    DataGridViewRow dataPush = new DataGridViewRow();
+                    dataPush.Cells[7].Value = pay;
+                    viewGrid.Rows.Add(dataPush);
+                }
+
                 conn.Close();
             }
         }

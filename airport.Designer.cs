@@ -34,13 +34,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonDashboard = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.buttonFlight = new System.Windows.Forms.Button();
-            this.buttonAirplane = new System.Windows.Forms.Button();
-            this.buttonAirline = new System.Windows.Forms.Button();
             this.textBoxCountry = new System.Windows.Forms.TextBox();
             this.textBoxName_A = new System.Windows.Forms.TextBox();
             this.textBoxID_A = new System.Windows.Forms.TextBox();
@@ -52,7 +45,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -107,7 +99,7 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label7.Location = new System.Drawing.Point(529, 100);
+            this.label7.Location = new System.Drawing.Point(484, 96);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(215, 23);
             this.label7.TabIndex = 1;
@@ -119,110 +111,16 @@
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label3.Location = new System.Drawing.Point(535, 59);
+            this.label3.Location = new System.Drawing.Point(490, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(190, 32);
             this.label3.TabIndex = 0;
             this.label3.Text = "Airline System";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
-            this.panel1.Controls.Add(this.buttonFlight);
-            this.panel1.Controls.Add(this.buttonAirplane);
-            this.panel1.Controls.Add(this.buttonAirline);
-            this.panel1.Controls.Add(this.buttonDashboard);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(169, 647);
-            this.panel1.TabIndex = 66;
-            // 
-            // buttonDashboard
-            // 
-            this.buttonDashboard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonDashboard.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDashboard.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonDashboard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.buttonDashboard.Location = new System.Drawing.Point(-5, 510);
-            this.buttonDashboard.Name = "buttonDashboard";
-            this.buttonDashboard.Size = new System.Drawing.Size(183, 91);
-            this.buttonDashboard.TabIndex = 64;
-            this.buttonDashboard.Text = "Информационное\r\nтабло";
-            this.buttonDashboard.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label2.Location = new System.Drawing.Point(455, 91);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(227, 23);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Информационное табло";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label4.Location = new System.Drawing.Point(476, 45);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(190, 32);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Airline System";
-            // 
-            // buttonFlight
-            // 
-            this.buttonFlight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonFlight.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonFlight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFlight.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonFlight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.buttonFlight.Location = new System.Drawing.Point(0, 416);
-            this.buttonFlight.Name = "buttonFlight";
-            this.buttonFlight.Size = new System.Drawing.Size(171, 97);
-            this.buttonFlight.TabIndex = 67;
-            this.buttonFlight.Text = "Рейсы";
-            this.buttonFlight.UseVisualStyleBackColor = true;
-            // 
-            // buttonAirplane
-            // 
-            this.buttonAirplane.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAirplane.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonAirplane.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAirplane.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonAirplane.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.buttonAirplane.Location = new System.Drawing.Point(0, 322);
-            this.buttonAirplane.Name = "buttonAirplane";
-            this.buttonAirplane.Size = new System.Drawing.Size(171, 97);
-            this.buttonAirplane.TabIndex = 66;
-            this.buttonAirplane.Text = "Самолеты";
-            this.buttonAirplane.UseVisualStyleBackColor = true;
-            // 
-            // buttonAirline
-            // 
-            this.buttonAirline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAirline.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonAirline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAirline.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonAirline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.buttonAirline.Location = new System.Drawing.Point(0, 228);
-            this.buttonAirline.Name = "buttonAirline";
-            this.buttonAirline.Size = new System.Drawing.Size(171, 97);
-            this.buttonAirline.TabIndex = 65;
-            this.buttonAirline.Text = "Авиакомпании";
-            this.buttonAirline.UseVisualStyleBackColor = true;
-            // 
             // textBoxCountry
             // 
             this.textBoxCountry.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxCountry.Location = new System.Drawing.Point(629, 375);
+            this.textBoxCountry.Location = new System.Drawing.Point(602, 364);
             this.textBoxCountry.Multiline = true;
             this.textBoxCountry.Name = "textBoxCountry";
             this.textBoxCountry.Size = new System.Drawing.Size(256, 32);
@@ -232,7 +130,7 @@
             // textBoxName_A
             // 
             this.textBoxName_A.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxName_A.Location = new System.Drawing.Point(629, 309);
+            this.textBoxName_A.Location = new System.Drawing.Point(602, 293);
             this.textBoxName_A.Multiline = true;
             this.textBoxName_A.Name = "textBoxName_A";
             this.textBoxName_A.Size = new System.Drawing.Size(256, 32);
@@ -242,7 +140,7 @@
             // textBoxID_A
             // 
             this.textBoxID_A.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxID_A.Location = new System.Drawing.Point(629, 243);
+            this.textBoxID_A.Location = new System.Drawing.Point(602, 213);
             this.textBoxID_A.Multiline = true;
             this.textBoxID_A.Name = "textBoxID_A";
             this.textBoxID_A.Size = new System.Drawing.Size(256, 32);
@@ -255,7 +153,7 @@
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label8.Location = new System.Drawing.Point(378, 314);
+            this.label8.Location = new System.Drawing.Point(351, 298);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 23);
             this.label8.TabIndex = 85;
@@ -267,7 +165,7 @@
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label6.Location = new System.Drawing.Point(378, 380);
+            this.label6.Location = new System.Drawing.Point(351, 364);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 23);
             this.label6.TabIndex = 84;
@@ -279,7 +177,7 @@
             this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label5.Location = new System.Drawing.Point(378, 248);
+            this.label5.Location = new System.Drawing.Point(351, 218);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(130, 23);
             this.label5.TabIndex = 83;
@@ -291,16 +189,17 @@
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.label10.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.SystemColors.Control;
-            this.label10.Location = new System.Drawing.Point(978, 583);
+            this.label10.Location = new System.Drawing.Point(665, 248);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 19);
+            this.label10.Size = new System.Drawing.Size(133, 19);
             this.label10.TabIndex = 92;
-            this.label10.Text = "*Только число*";
+            this.label10.Text = "*только число*";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // textBoxCity
             // 
             this.textBoxCity.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxCity.Location = new System.Drawing.Point(629, 441);
+            this.textBoxCity.Location = new System.Drawing.Point(602, 438);
             this.textBoxCity.Multiline = true;
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(256, 32);
@@ -313,7 +212,7 @@
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label11.Location = new System.Drawing.Point(378, 446);
+            this.label11.Location = new System.Drawing.Point(351, 438);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 23);
             this.label11.TabIndex = 90;
@@ -326,7 +225,7 @@
             this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonSave.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSave.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.buttonSave.Location = new System.Drawing.Point(576, 537);
+            this.buttonSave.Location = new System.Drawing.Point(496, 549);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(168, 41);
             this.buttonSave.TabIndex = 93;
@@ -351,15 +250,12 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "airport";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "airport";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,13 +268,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button buttonDashboard;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonFlight;
-        private System.Windows.Forms.Button buttonAirplane;
-        private System.Windows.Forms.Button buttonAirline;
         private System.Windows.Forms.TextBox textBoxCountry;
         private System.Windows.Forms.TextBox textBoxName_A;
         private System.Windows.Forms.TextBox textBoxID_A;

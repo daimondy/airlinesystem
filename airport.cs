@@ -62,5 +62,10 @@ namespace airlinesystem
         {
             Application.Exit();
         }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

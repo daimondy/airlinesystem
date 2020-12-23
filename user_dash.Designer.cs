@@ -36,12 +36,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonAirline = new System.Windows.Forms.Button();
             this.buttonAirport = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tableNameHeader = new System.Windows.Forms.Label();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.buttonAirline = new System.Windows.Forms.Button();
             this.viewGrid = new System.Windows.Forms.DataGridView();
             this.Airport_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Airport_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -135,8 +135,22 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(-11, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(183, 647);
+            this.panel1.Size = new System.Drawing.Size(183, 736);
             this.panel1.TabIndex = 63;
+            // 
+            // buttonAirline
+            // 
+            this.buttonAirline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAirline.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonAirline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAirline.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonAirline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
+            this.buttonAirline.Location = new System.Drawing.Point(12, 228);
+            this.buttonAirline.Name = "buttonAirline";
+            this.buttonAirline.Size = new System.Drawing.Size(171, 97);
+            this.buttonAirline.TabIndex = 65;
+            this.buttonAirline.Text = "Купить билет";
+            this.buttonAirline.UseVisualStyleBackColor = true;
             // 
             // buttonAirport
             // 
@@ -187,20 +201,6 @@
             this.tableNameHeader.Size = new System.Drawing.Size(190, 32);
             this.tableNameHeader.TabIndex = 5;
             this.tableNameHeader.Text = "Airline System";
-            // 
-            // buttonAirline
-            // 
-            this.buttonAirline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAirline.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonAirline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAirline.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonAirline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.buttonAirline.Location = new System.Drawing.Point(12, 228);
-            this.buttonAirline.Name = "buttonAirline";
-            this.buttonAirline.Size = new System.Drawing.Size(171, 97);
-            this.buttonAirline.TabIndex = 65;
-            this.buttonAirline.Text = "Купить билет";
-            this.buttonAirline.UseVisualStyleBackColor = true;
             // 
             // viewGrid
             // 
