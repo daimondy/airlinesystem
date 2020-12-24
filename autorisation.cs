@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.VisualBasic;
+using System.Windows.Input;
 
 namespace airlinesystem
 {
@@ -16,6 +17,10 @@ namespace airlinesystem
     {
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\wisep\source\repos\airlinesystem\Database1.mdf;Integrated Security=True");
 
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !(Char.IsDigit(e.Text, 0) && Char.IsLetterOrDigit(e.Text, 0));
+         }
         public autorisation()
         {
             InitializeComponent();
@@ -26,6 +31,7 @@ namespace airlinesystem
         {
             Application.Exit();
         }
+
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -38,6 +44,8 @@ namespace airlinesystem
                 string username, password;
                 username = textBoxLogin.Text;
                 password = textBoxPassword.Text;
+
+
 
                 string result = Microsoft.VisualBasic.Interaction.InputBox("Введите пароль: ", "Пароль для администратора");
                 if (result == "0")
@@ -68,8 +76,34 @@ namespace airlinesystem
             }
             else
             {
-                new user_dash().Show();
-                Hide();
+                conn.Open();
+
+                string username, password;
+                username = textBoxLogin.Text;
+                password = textBoxPassword.Text;
+               
+                string query = "SELECT * FROM [admin] WHERE username = @aU and password = @aP";
+
+                SqlCommand command = new SqlCommand(query, conn);
+
+                command.Parameters.AddWithValue("@aU", username); //указание заглушки логина
+                command.Parameters.AddWithValue("@aP", password); //указание заглушки пароля
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet set = new DataSet();
+                adapter.Fill(set);
+
+                if ((set.Tables[0].Rows.Count) > 0)
+                {
+                    MessageBox.Show("Вы авторизовались", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    new user_dash().Show();
+                    Hide();
+                }
+                else
+                    MessageBox.Show("Проверьте правильность логина и/или пароля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+
             }
            
         }

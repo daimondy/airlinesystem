@@ -17,7 +17,6 @@ namespace airlinesystem
         public registration()
         {
             InitializeComponent();
-            
         }
         
         private void labelExit_Click(object sender, EventArgs e)
@@ -32,16 +31,13 @@ namespace airlinesystem
             string middlename = textBoxMiddleN.Text;
             string contact_num = textBoxContNum.Text;
             string email = textBoxEmail.Text;
-
+            string date = dateTimePicker1.Text;
             string username = textBoxUserN.Text;
             string password = textBoxPassword.Text;
             
-            //узнать как в Sql работать с датой
-
             conn.Open();
 
-
-            string query = "INSERT INTO [admin] (username, password, first_name, last_name, middle_name, contact_number, email) VALUES (@uN, @pS, @fN, @lN, @mN, @cN, @eml)";
+            string query = "INSERT INTO [admin] (username, password, first_name, last_name, middle_name, contact_number, email, date_of_birth) VALUES (@uN, @pS, @fN, @lN, @mN, @cN, @eml, @date)";
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.AddWithValue("@uN", username);
             command.Parameters.AddWithValue("@pS", password);
@@ -50,21 +46,11 @@ namespace airlinesystem
             command.Parameters.AddWithValue("@mN", middlename);
             command.Parameters.AddWithValue("@cN", contact_num);
             command.Parameters.AddWithValue("@eml", email);
-
-
-            /*string query2 = "INSERT INTO [admin]() VALUES (@date)";
-            SqlCommand command2 = new SqlCommand(query2, conn);
-            command2.Parameters.AddWithValue("@date", dateTimePicker1.Value);
-             command2.ExecuteNonQuery();
-             */
-
-            //добавить условие регистрации как пользователь и как админ(если получиться сделать проверку)
+            command.Parameters.AddWithValue("@date", date);
 
             command.ExecuteNonQuery();
 
             conn.Close();
-
-
 
             new autorisation().Show();
             Hide();
