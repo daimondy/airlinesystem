@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.labelExit = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelBack = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,6 +52,9 @@
             this.IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Depart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.а = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.f = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectAttribute = new System.Windows.Forms.ComboBox();
             this.newValueBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -81,25 +84,25 @@
             this.labelExit.Text = "X";
             this.labelExit.Click += new System.EventHandler(this.labelExit_Click);
             // 
-            // label1
+            // labelBack
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label1.Location = new System.Drawing.Point(44, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "<";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.labelBack.AutoSize = true;
+            this.labelBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
+            this.labelBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelBack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
+            this.labelBack.Location = new System.Drawing.Point(44, 27);
+            this.labelBack.Name = "labelBack";
+            this.labelBack.Size = new System.Drawing.Size(28, 29);
+            this.labelBack.TabIndex = 4;
+            this.labelBack.Text = "<";
+            this.labelBack.Click += new System.EventHandler(this.labelBack_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.labelExit);
-            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.labelBack);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Location = new System.Drawing.Point(-11, -3);
@@ -240,6 +243,7 @@
             // 
             this.viewGrid.AllowUserToAddRows = false;
             this.viewGrid.AllowUserToDeleteRows = false;
+            this.viewGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(144)))), ((int)(((byte)(114)))));
             this.viewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Airport_ID,
@@ -249,13 +253,16 @@
             this.Status,
             this.IDd,
             this.Arrival,
-            this.Depart});
-            this.viewGrid.Location = new System.Drawing.Point(188, 276);
+            this.Depart,
+            this.а,
+            this.f,
+            this.pay});
+            this.viewGrid.Location = new System.Drawing.Point(169, 276);
             this.viewGrid.Name = "viewGrid";
             this.viewGrid.ReadOnly = true;
             this.viewGrid.RowHeadersWidth = 51;
             this.viewGrid.RowTemplate.Height = 24;
-            this.viewGrid.Size = new System.Drawing.Size(949, 349);
+            this.viewGrid.Size = new System.Drawing.Size(1014, 349);
             this.viewGrid.TabIndex = 64;
             // 
             // Airport_ID
@@ -321,6 +328,32 @@
             this.Depart.Name = "Depart";
             this.Depart.ReadOnly = true;
             this.Depart.Width = 125;
+            // 
+            // а
+            // 
+            this.а.HeaderText = "f";
+            this.а.MinimumWidth = 6;
+            this.а.Name = "а";
+            this.а.ReadOnly = true;
+            this.а.Visible = false;
+            this.а.Width = 125;
+            // 
+            // f
+            // 
+            this.f.HeaderText = "f";
+            this.f.MinimumWidth = 6;
+            this.f.Name = "f";
+            this.f.ReadOnly = true;
+            this.f.Visible = false;
+            this.f.Width = 125;
+            // 
+            // pay
+            // 
+            this.pay.HeaderText = "Цена";
+            this.pay.MinimumWidth = 6;
+            this.pay.Name = "pay";
+            this.pay.ReadOnly = true;
+            this.pay.Width = 125;
             // 
             // selectAttribute
             // 
@@ -478,7 +511,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelExit;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelBack;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label7;
@@ -510,5 +543,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Arrival;
         private System.Windows.Forms.DataGridViewTextBoxColumn Depart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn а;
+        private System.Windows.Forms.DataGridViewTextBoxColumn f;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pay;
     }
 }

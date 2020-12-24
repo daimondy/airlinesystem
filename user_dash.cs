@@ -26,61 +26,69 @@ namespace airlinesystem
         private void populateGrid()
         {
             conn.Open();
-            viewGrid.Columns[0].Visible = false;
-            viewGrid.Columns[1].Visible = true;
-            viewGrid.Columns[2].Visible = true;
-            viewGrid.Columns[3].Visible = true;
-            viewGrid.Columns[4].Visible = false;
-            viewGrid.Columns[5].Visible = true;
-            viewGrid.Columns[6].Visible = true;
-            SqlCommand cmd = new SqlCommand("SELECT * FROM [airport]", conn);
+            viewGrid.Columns[0].Visible = true;//рейс
+            viewGrid.Columns[1].Visible = false;
+            viewGrid.Columns[2].Visible = false;
+            viewGrid.Columns[3].Visible = true;// город отпрления
+            viewGrid.Columns[4].Visible = true;//город
+            viewGrid.Columns[5].Visible = true;//время
+            viewGrid.Columns[6].Visible = true;//время
+            viewGrid.Columns[7].Visible = true;//статус
+            viewGrid.Columns[8].Visible = false;
+            viewGrid.Columns[9].Visible = true;//название
+            viewGrid.Columns[10].Visible = false;
+            viewGrid.Columns[11].Visible = false;
+            viewGrid.Columns[12].Visible = false;
+            viewGrid.Columns[13].Visible = true;//цена
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [flight] JOIN [airline] ON  flight.airline_id = airline.airline_id " +
+                                                                   "JOIN [pay] ON pay.flight_id = flight.flight_id", conn);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset);
 
             for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
             {
-                string id = dataset.Tables[0].Rows[i].ItemArray[0].ToString();
-                string name = dataset.Tables[0].Rows[i].ItemArray[1].ToString();
-                string city = dataset.Tables[0].Rows[i].ItemArray[2].ToString();
-                string country = dataset.Tables[0].Rows[i].ItemArray[3].ToString();
+                string id_flight = dataset.Tables[0].Rows[i].ItemArray[0].ToString();
+                string city_arr = dataset.Tables[0].Rows[i].ItemArray[3].ToString();
+                string city_dep = dataset.Tables[0].Rows[i].ItemArray[4].ToString();
+                string dt_arr = dataset.Tables[0].Rows[i].ItemArray[5].ToString();
+                string dt_dep = dataset.Tables[0].Rows[i].ItemArray[6].ToString();
+                string status = dataset.Tables[0].Rows[i].ItemArray[7].ToString();
+                string airline_name = dataset.Tables[0].Rows[i].ItemArray[9].ToString();
+                string cost = dataset.Tables[0].Rows[i].ItemArray[13].ToString();
+
 
                 DataGridViewRow dataPush = new DataGridViewRow();
                 dataPush.CreateCells(viewGrid);
-                dataPush.Cells[0].Value = id;
-                dataPush.Cells[1].Value = name;
-                dataPush.Cells[2].Value = city;
-                dataPush.Cells[3].Value = country;
+                dataPush.Cells[0].Value = id_flight;
+                dataPush.Cells[3].Value = city_arr;
+                dataPush.Cells[4].Value = city_dep;
+                dataPush.Cells[5].Value = dt_arr;
+                dataPush.Cells[6].Value = dt_dep;
+                dataPush.Cells[7].Value = status;
+                dataPush.Cells[9].Value = airline_name;
+                dataPush.Cells[13].Value = cost;
+
                 viewGrid.Rows.Add(dataPush);
             }
             
-            SqlCommand cmd2 = new SqlCommand("SELECT * FROM [flight]", conn);
-            SqlDataAdapter adapter2 = new SqlDataAdapter(cmd2);
-            adapter2.Fill(dataset);
-
-            for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
-            {
-                string arr = dataset.Tables[0].Rows[i].ItemArray[5].ToString();
-                string dep = dataset.Tables[0].Rows[i].ItemArray[6].ToString();
-
-                DataGridViewRow dataPush = new DataGridViewRow();
-                dataPush.CreateCells(viewGrid);
-                dataPush.Cells[5].Value = arr;
-                dataPush.Cells[6].Value = dep;
-                viewGrid.Rows.Add(dataPush);
-            }
             conn.Close(); 
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            new autorisation().Show();
-            Hide();
+            
         }
 
         private void labelExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            new autorisation().Show();
+            Hide();
         }
     }
 }

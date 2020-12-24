@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.labelExit = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -36,20 +40,28 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonAirline = new System.Windows.Forms.Button();
             this.buttonAirport = new System.Windows.Forms.Button();
+            this.buttonAirline = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tableNameHeader = new System.Windows.Forms.Label();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewGrid = new System.Windows.Forms.DataGridView();
-            this.Airport_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Airport_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Counrty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flight_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City_arr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.city_dep = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Depart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Airport_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
@@ -129,28 +141,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
-            this.panel1.Controls.Add(this.buttonAirline);
+            this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.buttonAirport);
+            this.panel1.Controls.Add(this.buttonAirline);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(-11, -3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(183, 736);
             this.panel1.TabIndex = 63;
-            // 
-            // buttonAirline
-            // 
-            this.buttonAirline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.buttonAirline.Cursor = System.Windows.Forms.Cursors.Default;
-            this.buttonAirline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAirline.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.buttonAirline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.buttonAirline.Location = new System.Drawing.Point(12, 228);
-            this.buttonAirline.Name = "buttonAirline";
-            this.buttonAirline.Size = new System.Drawing.Size(171, 97);
-            this.buttonAirline.TabIndex = 65;
-            this.buttonAirline.Text = "Купить билет";
-            this.buttonAirline.UseVisualStyleBackColor = true;
             // 
             // buttonAirport
             // 
@@ -165,6 +164,20 @@
             this.buttonAirport.TabIndex = 64;
             this.buttonAirport.Text = "Заполнить данные";
             this.buttonAirport.UseVisualStyleBackColor = true;
+            // 
+            // buttonAirline
+            // 
+            this.buttonAirline.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.buttonAirline.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonAirline.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAirline.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonAirline.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
+            this.buttonAirline.Location = new System.Drawing.Point(12, 228);
+            this.buttonAirline.Name = "buttonAirline";
+            this.buttonAirline.Size = new System.Drawing.Size(171, 97);
+            this.buttonAirline.TabIndex = 65;
+            this.buttonAirline.Text = "Купить билет";
+            this.buttonAirline.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -206,66 +219,105 @@
             // 
             this.viewGrid.AllowUserToAddRows = false;
             this.viewGrid.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.viewGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.viewGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(144)))), ((int)(((byte)(114)))));
+            this.viewGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.viewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Airport_ID,
-            this.Airport_Name,
-            this.City,
-            this.Counrty,
-            this.IDd,
+            this.flight_id,
+            this.Column2,
+            this.Column3,
+            this.City_arr,
+            this.city_dep,
             this.Arrival,
-            this.Depart});
-            this.viewGrid.Location = new System.Drawing.Point(191, 250);
+            this.Depart,
+            this.statuc,
+            this.Column4,
+            this.Airport_Name,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.pay});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.viewGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            this.viewGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(231)))), ((int)(((byte)(215)))));
+            this.viewGrid.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.viewGrid.Location = new System.Drawing.Point(170, 225);
             this.viewGrid.Name = "viewGrid";
             this.viewGrid.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.viewGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.viewGrid.RowHeadersWidth = 51;
             this.viewGrid.RowTemplate.Height = 24;
-            this.viewGrid.Size = new System.Drawing.Size(949, 349);
+            this.viewGrid.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.viewGrid.Size = new System.Drawing.Size(1013, 508);
+            this.viewGrid.StandardTab = true;
             this.viewGrid.TabIndex = 65;
             // 
-            // Airport_ID
+            // flight_id
             // 
-            this.Airport_ID.HeaderText = "Аэропорт ID";
-            this.Airport_ID.MinimumWidth = 6;
-            this.Airport_ID.Name = "Airport_ID";
-            this.Airport_ID.ReadOnly = true;
-            this.Airport_ID.Width = 125;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.flight_id.DefaultCellStyle = dataGridViewCellStyle2;
+            this.flight_id.HeaderText = "Номер рейса";
+            this.flight_id.MinimumWidth = 6;
+            this.flight_id.Name = "flight_id";
+            this.flight_id.ReadOnly = true;
+            this.flight_id.Width = 125;
             // 
-            // Airport_Name
+            // Column2
             // 
-            this.Airport_Name.HeaderText = "Название аэропорта";
-            this.Airport_Name.MinimumWidth = 6;
-            this.Airport_Name.Name = "Airport_Name";
-            this.Airport_Name.ReadOnly = true;
-            this.Airport_Name.Width = 125;
+            this.Column2.HeaderText = "Column2";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
             // 
-            // City
+            // Column3
             // 
-            this.City.HeaderText = "Город";
-            this.City.MinimumWidth = 6;
-            this.City.Name = "City";
-            this.City.ReadOnly = true;
-            this.City.Width = 125;
+            this.Column3.HeaderText = "Column3";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
             // 
-            // Counrty
+            // City_arr
             // 
-            this.Counrty.HeaderText = "Страна";
-            this.Counrty.MinimumWidth = 6;
-            this.Counrty.Name = "Counrty";
-            this.Counrty.ReadOnly = true;
-            this.Counrty.Width = 125;
+            this.City_arr.HeaderText = "Город отправления";
+            this.City_arr.MinimumWidth = 6;
+            this.City_arr.Name = "City_arr";
+            this.City_arr.ReadOnly = true;
+            this.City_arr.Width = 125;
             // 
-            // IDd
+            // city_dep
             // 
-            this.IDd.HeaderText = "ID";
-            this.IDd.MinimumWidth = 6;
-            this.IDd.Name = "IDd";
-            this.IDd.ReadOnly = true;
-            this.IDd.Width = 125;
+            this.city_dep.HeaderText = "Город прибытия";
+            this.city_dep.MinimumWidth = 6;
+            this.city_dep.Name = "city_dep";
+            this.city_dep.ReadOnly = true;
+            this.city_dep.Width = 125;
             // 
             // Arrival
             // 
-            this.Arrival.HeaderText = "Прибытие";
+            this.Arrival.HeaderText = "Время прибытия";
             this.Arrival.MinimumWidth = 6;
             this.Arrival.Name = "Arrival";
             this.Arrival.ReadOnly = true;
@@ -273,11 +325,80 @@
             // 
             // Depart
             // 
-            this.Depart.HeaderText = "Отправление";
+            this.Depart.HeaderText = "Время отправления";
             this.Depart.MinimumWidth = 6;
             this.Depart.Name = "Depart";
             this.Depart.ReadOnly = true;
             this.Depart.Width = 125;
+            // 
+            // statuc
+            // 
+            this.statuc.HeaderText = "Статус";
+            this.statuc.MinimumWidth = 6;
+            this.statuc.Name = "statuc";
+            this.statuc.ReadOnly = true;
+            this.statuc.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Column4";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Airport_Name
+            // 
+            this.Airport_Name.HeaderText = "Авиакомпания";
+            this.Airport_Name.MinimumWidth = 6;
+            this.Airport_Name.Name = "Airport_Name";
+            this.Airport_Name.ReadOnly = true;
+            this.Airport_Name.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Column5";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Column6";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Column7";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 125;
+            // 
+            // pay
+            // 
+            this.pay.HeaderText = "Цена";
+            this.pay.MinimumWidth = 6;
+            this.pay.Name = "pay";
+            this.pay.ReadOnly = true;
+            this.pay.Width = 125;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
+            this.label10.Location = new System.Drawing.Point(35, 27);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(28, 29);
+            this.label10.TabIndex = 83;
+            this.label10.Text = "<";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // user_dash
             // 
@@ -285,10 +406,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(1183, 730);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.viewGrid);
             this.Controls.Add(this.tableNameHeader);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "user_dash";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -320,12 +441,20 @@
         private System.Windows.Forms.Label tableNameHeader;
         private System.Windows.Forms.Button buttonAirline;
         private System.Windows.Forms.DataGridView viewGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Airport_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Airport_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn City;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Counrty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn flight_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn City_arr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn city_dep;
         private System.Windows.Forms.DataGridViewTextBoxColumn Arrival;
         private System.Windows.Forms.DataGridViewTextBoxColumn Depart;
+        private System.Windows.Forms.DataGridViewTextBoxColumn statuc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Airport_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn pay;
+        private System.Windows.Forms.Label label10;
     }
 }

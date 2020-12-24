@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.VisualBasic;
+using System.Windows.Input;
 
 namespace airlinesystem
 {
@@ -39,11 +40,12 @@ namespace airlinesystem
                 username = textBoxLogin.Text;
                 password = textBoxPassword.Text;
 
-                string result = Microsoft.VisualBasic.Interaction.InputBox("Введите пароль: ", "Пароль для администратора");
+                string result = Microsoft.VisualBasic.Interaction.InputBox("Введите ключ доступа: ", "Доступ");
                 if (result == "0")
                 {
+                    
                     string query = "SELECT * FROM [admin] WHERE username = @aU and password = @aP";
-
+                    
                     SqlCommand command = new SqlCommand(query, conn);
 
                     command.Parameters.AddWithValue("@aU", username); //указание заглушки логина
@@ -52,7 +54,7 @@ namespace airlinesystem
                     SqlDataAdapter adapter = new SqlDataAdapter(command);
                     DataSet set = new DataSet();
                     adapter.Fill(set);
-
+                   
                     if ((set.Tables[0].Rows.Count) > 0)
                     {
                         MessageBox.Show("Вы авторизовались", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -68,8 +70,34 @@ namespace airlinesystem
             }
             else
             {
-                new user_dash().Show();
-                Hide();
+                conn.Open();
+                
+                string username, password;
+                username = textBoxLogin.Text;
+                password = textBoxPassword.Text;
+               
+                string query = "SELECT * FROM [admin] WHERE username = @aU and password = @aP";
+
+                SqlCommand command = new SqlCommand(query, conn);
+
+                command.Parameters.AddWithValue("@aU", username); //указание заглушки логина
+                command.Parameters.AddWithValue("@aP", password); //указание заглушки пароля
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataSet set = new DataSet();
+                adapter.Fill(set);
+
+                if ((set.Tables[0].Rows.Count) > 0)
+                {
+                    MessageBox.Show("Вы авторизовались", "Успешно", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
+                    new user_dash().Show();
+                    Hide();
+                }
+                else
+                    MessageBox.Show("Проверьте правильность логина и/или пароля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                conn.Close();
+
             }
            
         }
@@ -80,14 +108,30 @@ namespace airlinesystem
             Hide();
         }
 
-        private void autorisation_Load(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-
+            new dashboard().Show();
+            Hide();
         }
 
-        private void textBoxLogin_TextChanged(object sender, EventArgs e)
+        private void buttonSingUpP_Click(object sender, EventArgs e)
         {
+            new user_reg().Show();
+            Hide();
+        }
 
+        private void autorisation_MouseMove(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+           if (checkBox1.Checked)
+            {
+                buttonSingUp.Visible = true;
+                buttonSingUpP.Visible = false;
+            }
+            else
+            {
+                buttonSingUp.Visible = false;
+                buttonSingUpP.Visible = true;
+            }
         }
     }
 }

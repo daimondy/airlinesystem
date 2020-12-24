@@ -22,12 +22,12 @@ namespace airlinesystem
             InitializeComponent();
             populateGrid();
             selectAttribute.Visible = false;
-            label1.Visible = false;
             newValueBox.Visible = false;
             deleteIDTextBox.Visible = false;
             deletePromptLabel.Visible = false;
             deleteButtonCon.Visible = false;
             label5.Visible = false;
+            labelBack.Visible = true;
         }
 
         private void populateGrid()
@@ -48,6 +48,7 @@ namespace airlinesystem
                 viewGrid.Columns[5].Visible = false;
                 viewGrid.Columns[6].Visible = false;
                 viewGrid.Columns[7].Visible = false;
+                viewGrid.Columns[10].Visible = false;
                 SqlCommand cmd = new SqlCommand("SELECT * FROM [airport]", conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet dataset = new DataSet();
@@ -79,12 +80,13 @@ namespace airlinesystem
                 viewGrid.Columns[2].Visible = true;
                 viewGrid.Columns[0].HeaderText = "Авиакомпания ID";
                 viewGrid.Columns[1].HeaderText = "Название авиакомпании";
-                viewGrid.Columns[2].HeaderText = "Самолёты";
+                viewGrid.Columns[2].HeaderText = "Количество самолётов";
                 viewGrid.Columns[3].Visible = false;
                 viewGrid.Columns[4].Visible = false;
                 viewGrid.Columns[5].Visible = false;
                 viewGrid.Columns[6].Visible = false;
                 viewGrid.Columns[7].Visible = false;
+                viewGrid.Columns[10].Visible = false;
                 SqlCommand cmd = new SqlCommand("SELECT * FROM [airline]", conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet dataset = new DataSet();
@@ -117,6 +119,7 @@ namespace airlinesystem
                 viewGrid.Columns[5].Visible = false;
                 viewGrid.Columns[6].Visible = false;
                 viewGrid.Columns[7].Visible = false;
+                viewGrid.Columns[10].Visible = false;
                 viewGrid.Columns[3].HeaderText = "Авиакомпания ID";
                 viewGrid.Columns[0].HeaderText = "Самолёт ID";
                 viewGrid.Columns[1].HeaderText = "Серийный номер";
@@ -130,7 +133,6 @@ namespace airlinesystem
                 viewGrid.Rows.Clear();
                 for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
                 {
-
                     string airline_ID = dataset.Tables[0].Rows[i].ItemArray[1].ToString();
                     string id = dataset.Tables[0].Rows[i].ItemArray[0].ToString();
                     string reg = dataset.Tables[0].Rows[i].ItemArray[2].ToString();
@@ -151,7 +153,6 @@ namespace airlinesystem
             else if (flag == "FLIGHT")
             {
                 conn.Open();
-
                 viewGrid.Columns[0].Visible = true;
                 viewGrid.Columns[1].Visible = true;
                 viewGrid.Columns[2].Visible = true;
@@ -160,7 +161,7 @@ namespace airlinesystem
                 viewGrid.Columns[5].Visible = true;
                 viewGrid.Columns[6].Visible = true;
                 viewGrid.Columns[7].Visible = true;
-
+                viewGrid.Columns[10].Visible = true;
                 viewGrid.Columns[0].HeaderText = "Рейс ID";
                 viewGrid.Columns[1].HeaderText = "Самолёт ID";
                 viewGrid.Columns[2].HeaderText = "Авиакомпания ID";
@@ -169,8 +170,9 @@ namespace airlinesystem
                 viewGrid.Columns[5].HeaderText = "Время прибытия";
                 viewGrid.Columns[6].HeaderText = "Время отправления";
                 viewGrid.Columns[7].HeaderText = "Статус";
-               // SELECT* FROM Table1 t1 JOIN Table2 t2 ON t1.USERS = t2.USERS
-                SqlCommand cmd = new SqlCommand("SELECT * FROM [flight] JOIN * [pay] ON ", conn);
+                viewGrid.Columns[10].HeaderText = "Цена";
+                // SELECT* FROM Table1 t1 JOIN Table2 t2 ON t1.USERS = t2.USERS
+                SqlCommand cmd = new SqlCommand("SELECT * FROM [flight] JOIN [pay] ON flight.flight_id = pay.flight_id", conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 DataSet dataset = new DataSet();
                 adapter.Fill(dataset);
@@ -185,7 +187,8 @@ namespace airlinesystem
                     string a_city = dataset.Tables[0].Rows[i].ItemArray[4].ToString();
                     string d_dt = dataset.Tables[0].Rows[i].ItemArray[5].ToString();
                     string a_dt = dataset.Tables[0].Rows[i].ItemArray[6].ToString();
-                    //string s = dataset.Tables[0].Rows[i].ItemArray[7].ToString();
+                    string s = dataset.Tables[0].Rows[i].ItemArray[7].ToString();
+                    string pay = dataset.Tables[0].Rows[i].ItemArray[10].ToString();
 
                     DataGridViewRow dataPush = new DataGridViewRow();
                     dataPush.CreateCells(viewGrid);
@@ -196,22 +199,8 @@ namespace airlinesystem
                     dataPush.Cells[4].Value = a_city;
                     dataPush.Cells[5].Value = d_dt;
                     dataPush.Cells[6].Value = a_dt;
-                   // dataPush.Cells[7].Value = s;
-                    viewGrid.Rows.Add(dataPush);
-                }
-
-                //viewGrid.Columns[8].Visible = true;
-                //viewGrid.Columns[8].HeaderText = "Цена";
-                SqlCommand cmd1 = new SqlCommand("SELECT * FROM [pay]", conn);
-                SqlDataAdapter adapter1 = new SqlDataAdapter(cmd1);
-                DataSet dataset1 = new DataSet();
-                adapter1.Fill(dataset1);
-
-                for (int i = 0; i < dataset1.Tables[0].Rows.Count; i++)
-                {
-                    string pay = dataset1.Tables[0].Rows[i].ItemArray[7].ToString();
-                    DataGridViewRow dataPush = new DataGridViewRow();
-                    dataPush.Cells[7].Value = pay;
+                    dataPush.Cells[7].Value = s;
+                    dataPush.Cells[10].Value = pay;
                     viewGrid.Rows.Add(dataPush);
                 }
 
@@ -377,7 +366,7 @@ namespace airlinesystem
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             selectAttribute.Visible = false;
-            label1.Visible = false;
+            labelBack.Visible = false;
             newValueBox.Visible = false;
             deleteIDTextBox.Visible = true;
             deletePromptLabel.Visible = true;
@@ -401,7 +390,7 @@ namespace airlinesystem
         {
             setID();
             selectAttribute.Visible = true;
-            label1.Visible = true;
+            labelBack.Visible = true;
             newValueBox.Visible = true;
             deleteIDTextBox.Visible = true;
             deletePromptLabel.Visible = true;
@@ -437,6 +426,12 @@ namespace airlinesystem
         private void labelExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void labelBack_Click(object sender, EventArgs e)
+        {
+            new autorisation().Show();
+            Hide();
         }
     }
 }

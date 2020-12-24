@@ -17,7 +17,9 @@ namespace airlinesystem
         public flight()
         {
             InitializeComponent();
+            loadairplane1();
             loadairplane();
+            
             loadcity();
         }
 
@@ -31,7 +33,7 @@ namespace airlinesystem
             conn.Open();
 
             this.comboBoxID_P.Items.Clear();
-            SqlCommand command = new SqlCommand("SELECT airplane_id, airline_id FROM [airplane]", conn);
+            SqlCommand command = new SqlCommand("SELECT airplane_id FROM [airplane]", conn);
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataSet dataset = new DataSet();
             adapter.Fill(dataset);
@@ -40,10 +42,29 @@ namespace airlinesystem
             {
                 string id = dataset.Tables[0].Rows[i].ItemArray[0].ToString();
                 comboBoxID_P.Items.Add(id);
-                comboBoxAirline.Items.Add(id);
             }
             conn.Close();
         }
+
+        private void loadairplane1()
+        {
+            conn.Open();
+
+            this.comboBoxID_P.Items.Clear();
+            SqlCommand command = new SqlCommand("SELECT airline_id FROM [airplane]", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataSet dataset = new DataSet();
+            adapter.Fill(dataset);
+
+            for (int i = 0; i < dataset.Tables[0].Rows.Count; i++)
+            {
+                string id1 = dataset.Tables[0].Rows[i].ItemArray[0].ToString();
+                comboBoxAirline.Items.Add(id1);
+            }
+            conn.Close();
+        }
+
+
 
         private void loadcity()
         {
@@ -68,17 +89,17 @@ namespace airlinesystem
         {
             string id_r = textBoxID_F.Text;
             string id_airp = comboBoxID_P.Text;
+            string id_airline = comboBoxAirline.Text;
             string from = comboBoxDep.Text;
             string to = comboBoxArr.Text;
             string datetimeF = dateTimeDep.Text;
             string datetimeT = dateTimeArr.Text;
-            string id_airline = comboBoxAirline.Text;
             string status = comboBoxStatus.Text;
             string pay = textBoxCost.Text;
 
             conn.Open();
 
-            string query = "INSERT INTO [flight] (flight_id, airplane_id, dep_city, arr_city, dep_datetime, arr_datetime, airline_id, status) VALUES (@idF, @idP, @dC, @aC, @timeD, @timeA, @airL, @s)";
+            string query = "INSERT INTO [flight] (flight_id, airplane_id, airline_id, dep_city, arr_city, dep_datetime, arr_datetime, status) VALUES (@idF, @idP, @airL, @dC, @aC, @timeD, @timeA, @s)";
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.AddWithValue("@idF", id_r);
             command.Parameters.AddWithValue("@idP", id_airp);

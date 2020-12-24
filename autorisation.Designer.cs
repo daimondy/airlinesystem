@@ -42,6 +42,7 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
+            this.buttonSingUpP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
@@ -166,7 +167,6 @@
             this.textBoxLogin.Size = new System.Drawing.Size(256, 32);
             this.textBoxLogin.TabIndex = 71;
             this.textBoxLogin.UseSystemPasswordChar = true;
-            this.textBoxLogin.TextChanged += new System.EventHandler(this.textBoxLogin_TextChanged);
             // 
             // textBoxPassword
             // 
@@ -201,12 +201,28 @@
             this.label17.Size = new System.Drawing.Size(0, 19);
             this.label17.TabIndex = 117;
             // 
+            // buttonSingUpP
+            // 
+            this.buttonSingUpP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
+            this.buttonSingUpP.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSingUpP.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonSingUpP.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonSingUpP.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.buttonSingUpP.Location = new System.Drawing.Point(304, 451);
+            this.buttonSingUpP.Name = "buttonSingUpP";
+            this.buttonSingUpP.Size = new System.Drawing.Size(168, 41);
+            this.buttonSingUpP.TabIndex = 118;
+            this.buttonSingUpP.Text = "Зарегистироваться";
+            this.buttonSingUpP.UseVisualStyleBackColor = false;
+            this.buttonSingUpP.Click += new System.EventHandler(this.buttonSingUpP_Click);
+            // 
             // autorisation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
             this.ClientSize = new System.Drawing.Size(737, 527);
+            this.Controls.Add(this.buttonSingUpP);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.textBoxPassword);
@@ -221,7 +237,7 @@
             this.Name = "autorisation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Авторизация";
-            this.Load += new System.EventHandler(this.autorisation_Load);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.autorisation_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
@@ -246,6 +262,7 @@
         private System.Windows.Forms.Label labelExit;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button buttonSingUpP;
     }
 }
 

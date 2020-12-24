@@ -17,3 +17,4 @@ C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.airline.resour
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.airplane.resources
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.flight.resources
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.user_dash.resources
+C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.user_reg.resources
