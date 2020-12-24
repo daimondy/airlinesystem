@@ -36,10 +36,6 @@ namespace airlinesystem
             if (flag == "AIRPORT")
             {
                 conn.Open();
-                viewGrid.Columns[0].Visible = true;
-                viewGrid.Columns[1].Visible = true;
-                viewGrid.Columns[2].Visible = true;
-                viewGrid.Columns[3].Visible = true;
                 viewGrid.Columns[0].HeaderText = "Аэропорт ID";
                 viewGrid.Columns[1].HeaderText = "Название аэропорта";
                 viewGrid.Columns[2].HeaderText = "Город";
@@ -75,9 +71,6 @@ namespace airlinesystem
             else if (flag == "AIRLINE")
             {
                 conn.Open();
-                viewGrid.Columns[0].Visible = true;
-                viewGrid.Columns[1].Visible = true;
-                viewGrid.Columns[2].Visible = true;
                 viewGrid.Columns[0].HeaderText = "Авиакомпания ID";
                 viewGrid.Columns[1].HeaderText = "Название авиакомпании";
                 viewGrid.Columns[2].HeaderText = "Количество самолётов";
@@ -111,11 +104,6 @@ namespace airlinesystem
             else if (flag == "AIRPLANE")
             {
                 conn.Open();
-                viewGrid.Columns[0].Visible = true;
-                viewGrid.Columns[1].Visible = true;
-                viewGrid.Columns[2].Visible = true;
-                viewGrid.Columns[3].Visible = true;
-                viewGrid.Columns[4].Visible = true;
                 viewGrid.Columns[5].Visible = false;
                 viewGrid.Columns[6].Visible = false;
                 viewGrid.Columns[7].Visible = false;

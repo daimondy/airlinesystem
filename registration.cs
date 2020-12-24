@@ -37,8 +37,12 @@ namespace airlinesystem
             
             conn.Open();
 
+<<<<<<< HEAD
             string query = "INSERT INTO [admin] (username, password, first_name, last_name, middle_name, contact_number, email, date_of_birth) " +
                 "VALUES (@uN, @pS, @fN, @lN, @mN, @cN, @eml, @date)";
+=======
+            string query = "INSERT INTO [admin] (username, password, first_name, last_name, middle_name, contact_number, email, date_of_birth) VALUES (@uN, @pS, @fN, @lN, @mN, @cN, @eml, @date)";
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.AddWithValue("@uN", username);
             command.Parameters.AddWithValue("@pS", password);
@@ -53,12 +57,15 @@ namespace airlinesystem
 
             conn.Close();
 
+<<<<<<< HEAD
             new autorisation().Show();
             Hide();
         }
 
         private void label10_Click(object sender, EventArgs e)
         {
+=======
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
             new autorisation().Show();
             Hide();
         }

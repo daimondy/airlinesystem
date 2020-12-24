@@ -40,7 +40,11 @@ namespace airlinesystem
             viewGrid.Columns[11].Visible = false;
             viewGrid.Columns[12].Visible = false;
             viewGrid.Columns[13].Visible = true;//цена
+<<<<<<< HEAD
             SqlCommand cmd = new SqlCommand("SELECT * FROM [flight] JOIN [airline] ON  flight.airline_id = airline.airline_id " +
+=======
+            SqlCommand cmd = new SqlCommand("SELECT * FROM [flight] JOIN [airline] ON  flight.flight_id = airline.airline_id " +
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
                                                                    "JOIN [pay] ON pay.flight_id = flight.flight_id", conn);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet dataset = new DataSet();

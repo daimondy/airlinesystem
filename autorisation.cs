@@ -17,6 +17,10 @@ namespace airlinesystem
     {
         SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\wisep\source\repos\airlinesystem\Database1.mdf;Integrated Security=True");
 
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !(Char.IsDigit(e.Text, 0) && Char.IsLetterOrDigit(e.Text, 0));
+         }
         public autorisation()
         {
             InitializeComponent();
@@ -27,6 +31,7 @@ namespace airlinesystem
         {
             Application.Exit();
         }
+
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
@@ -40,7 +45,13 @@ namespace airlinesystem
                 username = textBoxLogin.Text;
                 password = textBoxPassword.Text;
 
+<<<<<<< HEAD
                 string result = Microsoft.VisualBasic.Interaction.InputBox("Введите ключ доступа: ", "Доступ");
+=======
+
+
+                string result = Microsoft.VisualBasic.Interaction.InputBox("Введите пароль: ", "Пароль для администратора");
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
                 if (result == "0")
                 {
                     
@@ -71,7 +82,11 @@ namespace airlinesystem
             else
             {
                 conn.Open();
+<<<<<<< HEAD
                 
+=======
+
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
                 string username, password;
                 username = textBoxLogin.Text;
                 password = textBoxPassword.Text;

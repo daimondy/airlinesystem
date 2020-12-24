@@ -61,7 +61,10 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+<<<<<<< HEAD
             this.label10 = new System.Windows.Forms.Label();
+=======
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
@@ -141,7 +144,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
+<<<<<<< HEAD
             this.panel1.Controls.Add(this.label10);
+=======
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
             this.panel1.Controls.Add(this.buttonAirport);
             this.panel1.Controls.Add(this.buttonAirline);
             this.panel1.Controls.Add(this.label2);
@@ -387,6 +393,7 @@
             this.pay.ReadOnly = true;
             this.pay.Width = 125;
             // 
+<<<<<<< HEAD
             // label10
             // 
             this.label10.AutoSize = true;
@@ -400,6 +407,8 @@
             this.label10.Text = "<";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
+=======
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
             // user_dash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -455,6 +464,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn pay;
+<<<<<<< HEAD
         private System.Windows.Forms.Label label10;
+=======
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
     }
 }

@@ -279,6 +279,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 81;
             this.dateTimePicker1.Value = new System.DateTime(2020, 12, 24, 17, 59, 16, 0);
+<<<<<<< HEAD
             // 
             // label10
             // 
@@ -292,6 +293,8 @@
             this.label10.TabIndex = 82;
             this.label10.Text = "<";
             this.label10.Click += new System.EventHandler(this.label10_Click);
+=======
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
             // 
             // registration
             // 

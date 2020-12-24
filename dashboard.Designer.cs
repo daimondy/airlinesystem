@@ -44,6 +44,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.database1DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.viewGrid = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.Airport_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Airport_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +56,8 @@
             this.а = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.f = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
             this.selectAttribute = new System.Windows.Forms.ComboBox();
             this.newValueBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -65,6 +68,17 @@
             this.buttonDelete = new System.Windows.Forms.Button();
             this.tableNameHeader = new System.Windows.Forms.Label();
             this.deleteButtonCon = new System.Windows.Forms.Button();
+            this.Airport_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Airport_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.City = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Counrty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Arrival = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Depart = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.а = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.f = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.database1DataSetBindingSource)).BeginInit();
@@ -265,6 +279,7 @@
             this.viewGrid.Size = new System.Drawing.Size(1014, 349);
             this.viewGrid.TabIndex = 64;
             // 
+<<<<<<< HEAD
             // Airport_ID
             // 
             this.Airport_ID.HeaderText = "Аэропорт ID";
@@ -355,6 +370,8 @@
             this.pay.ReadOnly = true;
             this.pay.Width = 125;
             // 
+=======
+>>>>>>> 21729aab75e1fae98a5cce56a9dc10f8d8a7ffc5
             // selectAttribute
             // 
             this.selectAttribute.FormattingEnabled = true;
@@ -473,6 +490,96 @@
             this.deleteButtonCon.Text = "Удалить";
             this.deleteButtonCon.UseVisualStyleBackColor = false;
             this.deleteButtonCon.Click += new System.EventHandler(this.deleteButtonCon_Click);
+            // 
+            // Airport_ID
+            // 
+            this.Airport_ID.HeaderText = "Аэропорт ID";
+            this.Airport_ID.MinimumWidth = 6;
+            this.Airport_ID.Name = "Airport_ID";
+            this.Airport_ID.ReadOnly = true;
+            this.Airport_ID.Width = 125;
+            // 
+            // Airport_Name
+            // 
+            this.Airport_Name.HeaderText = "Название аэропорта";
+            this.Airport_Name.MinimumWidth = 6;
+            this.Airport_Name.Name = "Airport_Name";
+            this.Airport_Name.ReadOnly = true;
+            this.Airport_Name.Width = 125;
+            // 
+            // City
+            // 
+            this.City.HeaderText = "Город";
+            this.City.MinimumWidth = 6;
+            this.City.Name = "City";
+            this.City.ReadOnly = true;
+            this.City.Width = 125;
+            // 
+            // Counrty
+            // 
+            this.Counrty.HeaderText = "Страна";
+            this.Counrty.MinimumWidth = 6;
+            this.Counrty.Name = "Counrty";
+            this.Counrty.ReadOnly = true;
+            this.Counrty.Width = 125;
+            // 
+            // Status
+            // 
+            this.Status.HeaderText = "Статус";
+            this.Status.MinimumWidth = 6;
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 125;
+            // 
+            // IDd
+            // 
+            this.IDd.HeaderText = "ID";
+            this.IDd.MinimumWidth = 6;
+            this.IDd.Name = "IDd";
+            this.IDd.ReadOnly = true;
+            this.IDd.Width = 125;
+            // 
+            // Arrival
+            // 
+            this.Arrival.HeaderText = "Прибытие";
+            this.Arrival.MinimumWidth = 6;
+            this.Arrival.Name = "Arrival";
+            this.Arrival.ReadOnly = true;
+            this.Arrival.Width = 125;
+            // 
+            // Depart
+            // 
+            this.Depart.HeaderText = "Отправление";
+            this.Depart.MinimumWidth = 6;
+            this.Depart.Name = "Depart";
+            this.Depart.ReadOnly = true;
+            this.Depart.Width = 125;
+            // 
+            // а
+            // 
+            this.а.HeaderText = "f";
+            this.а.MinimumWidth = 6;
+            this.а.Name = "а";
+            this.а.ReadOnly = true;
+            this.а.Visible = false;
+            this.а.Width = 125;
+            // 
+            // f
+            // 
+            this.f.HeaderText = "f";
+            this.f.MinimumWidth = 6;
+            this.f.Name = "f";
+            this.f.ReadOnly = true;
+            this.f.Visible = false;
+            this.f.Width = 125;
+            // 
+            // pay
+            // 
+            this.pay.HeaderText = "Цена";
+            this.pay.MinimumWidth = 6;
+            this.pay.Name = "pay";
+            this.pay.ReadOnly = true;
+            this.pay.Width = 125;
             // 
             // dashboard
             // 
