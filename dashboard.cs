@@ -35,6 +35,7 @@ namespace airlinesystem
             tableNameHeader.Text = flag;
             if (flag == "AIRPORT")
             {
+                viewGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 conn.Open();
                 viewGrid.Columns[0].Visible = true;
                 viewGrid.Columns[1].Visible = true;
@@ -74,6 +75,7 @@ namespace airlinesystem
             }
             else if (flag == "AIRLINE")
             {
+                viewGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 conn.Open();
                 viewGrid.Columns[0].Visible = true;
                 viewGrid.Columns[1].Visible = true;
@@ -110,6 +112,7 @@ namespace airlinesystem
             }
             else if (flag == "AIRPLANE")
             {
+                viewGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 conn.Open();
                 viewGrid.Columns[0].Visible = true;
                 viewGrid.Columns[1].Visible = true;
@@ -152,6 +155,7 @@ namespace airlinesystem
             }
             else if (flag == "FLIGHT")
             {
+                viewGrid.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
                 conn.Open();
                 viewGrid.Columns[0].Visible = true;
                 viewGrid.Columns[1].Visible = true;

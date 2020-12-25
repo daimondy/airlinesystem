@@ -243,6 +243,7 @@
             // 
             this.viewGrid.AllowUserToAddRows = false;
             this.viewGrid.AllowUserToDeleteRows = false;
+            this.viewGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.viewGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(144)))), ((int)(((byte)(114)))));
             this.viewGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.viewGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -267,67 +268,67 @@
             // 
             // Airport_ID
             // 
+            this.Airport_ID.FillWeight = 100.2081F;
             this.Airport_ID.HeaderText = "Аэропорт ID";
             this.Airport_ID.MinimumWidth = 6;
             this.Airport_ID.Name = "Airport_ID";
             this.Airport_ID.ReadOnly = true;
-            this.Airport_ID.Width = 125;
             // 
             // Airport_Name
             // 
+            this.Airport_Name.FillWeight = 100.1841F;
             this.Airport_Name.HeaderText = "Название аэропорта";
             this.Airport_Name.MinimumWidth = 6;
             this.Airport_Name.Name = "Airport_Name";
             this.Airport_Name.ReadOnly = true;
-            this.Airport_Name.Width = 125;
             // 
             // City
             // 
+            this.City.FillWeight = 99.22672F;
             this.City.HeaderText = "Город";
             this.City.MinimumWidth = 6;
             this.City.Name = "City";
             this.City.ReadOnly = true;
-            this.City.Width = 125;
             // 
             // Counrty
             // 
+            this.Counrty.FillWeight = 100.2481F;
             this.Counrty.HeaderText = "Страна";
             this.Counrty.MinimumWidth = 6;
             this.Counrty.Name = "Counrty";
             this.Counrty.ReadOnly = true;
-            this.Counrty.Width = 125;
             // 
             // Status
             // 
+            this.Status.FillWeight = 100.2197F;
             this.Status.HeaderText = "Статус";
             this.Status.MinimumWidth = 6;
             this.Status.Name = "Status";
             this.Status.ReadOnly = true;
-            this.Status.Width = 125;
             // 
             // IDd
             // 
+            this.IDd.FillWeight = 100.1944F;
             this.IDd.HeaderText = "ID";
             this.IDd.MinimumWidth = 6;
             this.IDd.Name = "IDd";
             this.IDd.ReadOnly = true;
-            this.IDd.Width = 125;
             // 
             // Arrival
             // 
+            this.Arrival.FillWeight = 99.23576F;
             this.Arrival.HeaderText = "Прибытие";
             this.Arrival.MinimumWidth = 6;
             this.Arrival.Name = "Arrival";
             this.Arrival.ReadOnly = true;
-            this.Arrival.Width = 125;
             // 
             // Depart
             // 
+            this.Depart.FillWeight = 100.2562F;
             this.Depart.HeaderText = "Отправление";
             this.Depart.MinimumWidth = 6;
             this.Depart.Name = "Depart";
             this.Depart.ReadOnly = true;
-            this.Depart.Width = 125;
             // 
             // а
             // 
@@ -336,7 +337,6 @@
             this.а.Name = "а";
             this.а.ReadOnly = true;
             this.а.Visible = false;
-            this.а.Width = 125;
             // 
             // f
             // 
@@ -345,15 +345,14 @@
             this.f.Name = "f";
             this.f.ReadOnly = true;
             this.f.Visible = false;
-            this.f.Width = 125;
             // 
             // pay
             // 
+            this.pay.FillWeight = 100.2269F;
             this.pay.HeaderText = "Цена";
             this.pay.MinimumWidth = 6;
             this.pay.Name = "pay";
             this.pay.ReadOnly = true;
-            this.pay.Width = 125;
             // 
             // selectAttribute
             // 
@@ -478,8 +477,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(55)))), ((int)(((byte)(42)))));
-            this.ClientSize = new System.Drawing.Size(1183, 730);
+            this.ClientSize = new System.Drawing.Size(1186, 739);
             this.Controls.Add(this.deleteButtonCon);
             this.Controls.Add(this.tableNameHeader);
             this.Controls.Add(this.buttonDelete);

@@ -37,17 +37,19 @@ namespace airlinesystem
             
             conn.Open();
 
-            string query = "INSERT INTO [admin] (username, password, first_name, last_name, middle_name, contact_number, email, date_of_birth) " +
-                "VALUES (@uN, @pS, @fN, @lN, @mN, @cN, @eml, @date)";
+            string query = "INSERT INTO [admin] (username, password, first_name, last_name, middle_name, date_of_birth, email, contact_number) " +
+                "VALUES (@uN, @pS, @fN, @lN, @mN, @date, @eml, @cN)";
             SqlCommand command = new SqlCommand(query, conn);
             command.Parameters.AddWithValue("@uN", username);
             command.Parameters.AddWithValue("@pS", password);
             command.Parameters.AddWithValue("@fN", firstname);
             command.Parameters.AddWithValue("@lN", lastname);
             command.Parameters.AddWithValue("@mN", middlename);
-            command.Parameters.AddWithValue("@cN", contact_num);
-            command.Parameters.AddWithValue("@eml", email);
             command.Parameters.AddWithValue("@date", date);
+            command.Parameters.AddWithValue("@eml", email);
+            command.Parameters.AddWithValue("@cN", contact_num);
+            
+            
 
             command.ExecuteNonQuery();
 
@@ -61,6 +63,12 @@ namespace airlinesystem
         {
             new autorisation().Show();
             Hide();
+        }
+
+        private void textBoxContNum_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar <= 48 || e.KeyChar >= 59) && e.KeyChar != 8)
+                e.Handled = true;
         }
     }
 }

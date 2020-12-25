@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
             this.labelExit = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,7 +49,6 @@
             this.textBoxFirstN = new System.Windows.Forms.TextBox();
             this.buttonSingUp = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,19 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1139, 131);
             this.panel2.TabIndex = 62;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
+            this.label10.Location = new System.Drawing.Point(38, 30);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(28, 29);
+            this.label10.TabIndex = 82;
+            this.label10.Text = "<";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // labelExit
             // 
@@ -223,6 +236,7 @@
             this.textBoxContNum.Size = new System.Drawing.Size(256, 32);
             this.textBoxContNum.TabIndex = 75;
             this.textBoxContNum.UseSystemPasswordChar = true;
+            this.textBoxContNum.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContNum_KeyPress);
             // 
             // textBoxMiddleN
             // 
@@ -279,19 +293,6 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 81;
             this.dateTimePicker1.Value = new System.DateTime(2020, 12, 24, 17, 59, 16, 0);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label10.Location = new System.Drawing.Point(38, 30);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(28, 29);
-            this.label10.TabIndex = 82;
-            this.label10.Text = "<";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // registration
             // 

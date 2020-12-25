@@ -40,8 +40,8 @@ namespace airlinesystem
                 username = textBoxLogin.Text;
                 password = textBoxPassword.Text;
 
-                string result = Microsoft.VisualBasic.Interaction.InputBox("Введите ключ доступа: ", "Доступ");
-                if (result == "0")
+                string result = Microsoft.VisualBasic.Interaction.InputBox("Введите код доступа: ", "Доступ");
+                if (result == "4038fc044c99b0dbd08769d969b92fdd")
                 {
                     
                     string query = "SELECT * FROM [admin] WHERE username = @aU and password = @aP";
@@ -65,7 +65,7 @@ namespace airlinesystem
                         MessageBox.Show("Проверьте правильность логина и/или пароля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
-                    MessageBox.Show("Проверьте правильность пароля", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Проверьте правильность кода доступа", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 conn.Close();
             }
             else
@@ -76,7 +76,7 @@ namespace airlinesystem
                 username = textBoxLogin.Text;
                 password = textBoxPassword.Text;
                
-                string query = "SELECT * FROM [admin] WHERE username = @aU and password = @aP";
+                string query = "SELECT * FROM [passenger_lp] WHERE username = @aU and password = @aP";
 
                 SqlCommand command = new SqlCommand(query, conn);
 

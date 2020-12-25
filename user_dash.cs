@@ -21,6 +21,12 @@ namespace airlinesystem
         {
             InitializeComponent();
             populateGrid();
+
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Interval = 1000;
+            timer.Elapsed += timer1_Tick;
+            timer.Enabled = true;
+
         }
 
         private void populateGrid()
@@ -75,6 +81,7 @@ namespace airlinesystem
             conn.Close(); 
         }
 
+
         private void label1_Click(object sender, EventArgs e)
         {
             
@@ -89,6 +96,13 @@ namespace airlinesystem
         {
             new autorisation().Show();
             Hide();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            var str = DateTime.Now.Day + "." + DateTime.Now.Month + "." + DateTime.Now.Year + " \n" + DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+            if (labelTime.InvokeRequired) labelTime.Invoke(new Action<string>((s) => labelTime.Text = s), str);
+            else labelTime.Text = str;
         }
     }
 }
