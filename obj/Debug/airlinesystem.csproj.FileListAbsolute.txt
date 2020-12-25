@@ -3,7 +3,6 @@ C:\Users\wisep\source\repos\airlinesystem\bin\Debug\Database1_log.ldf
 C:\Users\wisep\source\repos\airlinesystem\bin\Debug\airlinesystem.exe.config
 C:\Users\wisep\source\repos\airlinesystem\bin\Debug\airlinesystem.exe
 C:\Users\wisep\source\repos\airlinesystem\bin\Debug\airlinesystem.pdb
-C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.csprojAssemblyReference.cache
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.Properties.Resources.resources
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.csproj.GenerateResource.cache
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.csproj.CoreCompileInputs.cache

@@ -169,8 +169,8 @@ namespace airlinesystem
                 viewGrid.Columns[0].HeaderText = "Рейс ID";
                 viewGrid.Columns[1].HeaderText = "Самолёт ID";
                 viewGrid.Columns[2].HeaderText = "Авиакомпания ID";
-                viewGrid.Columns[3].HeaderText = "Город прибытия";
-                viewGrid.Columns[4].HeaderText = "Город отправления";
+                viewGrid.Columns[3].HeaderText = "Город отправления";
+                viewGrid.Columns[4].HeaderText = "Город прибытия";
                 viewGrid.Columns[5].HeaderText = "Время прибытия";
                 viewGrid.Columns[6].HeaderText = "Время отправления";
                 viewGrid.Columns[7].HeaderText = "Статус";
@@ -218,25 +218,25 @@ namespace airlinesystem
             {
                 id = "Airport_ID";
                 selectAttribute.Items.Clear();
-                selectAttribute.Items.AddRange(new object[] {"Airport_Name","City","Country"});
+                selectAttribute.Items.AddRange(new object[] {"airport_name","city","country"});
             }
             if (flag == "AIRLINE")
             {
                 id = "Airline_ID";
                 selectAttribute.Items.Clear();
-                selectAttribute.Items.AddRange(new object[] {"Airline_Name","Airplanes"});
+                selectAttribute.Items.AddRange(new object[] {"airline_name","airplanes"});
             }
             if (flag == "AIRPLANE")
             {
                 id = "Airplane_ID";
                 selectAttribute.Items.Clear();
-                selectAttribute.Items.AddRange(new object[] {"Reg_Number","Seats","Category"});
+                selectAttribute.Items.AddRange(new object[] {"reg_number","seats","category"});
             }
             if (flag == "FLIGHT")
             {
                 id = "Flight_ID";
                 selectAttribute.Items.Clear();
-                selectAttribute.Items.AddRange(new object[] {"Departure_City","Arrival_City","Departure_DateTime", "Arrival_DateTime", "Status",});
+                selectAttribute.Items.AddRange(new object[] {"dep_city","arr_city","dep_datetime", "arr_datetime", "status", "pay"});
             }
         }
 
