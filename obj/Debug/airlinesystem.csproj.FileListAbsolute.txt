@@ -17,3 +17,4 @@ C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.airplane.resou
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.flight.resources
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.user_dash.resources
 C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.user_reg.resources
+C:\Users\wisep\source\repos\airlinesystem\obj\Debug\airlinesystem.csprojAssemblyReference.cache

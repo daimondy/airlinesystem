@@ -95,11 +95,11 @@
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(34)))), ((int)(((byte)(33)))));
             this.label7.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(204)))), ((int)(((byte)(196)))));
-            this.label7.Location = new System.Drawing.Point(451, 67);
+            this.label7.Location = new System.Drawing.Point(365, 66);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(177, 32);
+            this.label7.Size = new System.Drawing.Size(392, 32);
             this.label7.TabIndex = 1;
-            this.label7.Text = "Регистрация";
+            this.label7.Text = "Регистрация администратора";
             // 
             // label2
             // 

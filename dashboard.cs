@@ -274,6 +274,7 @@ namespace airlinesystem
         private void deleteRecords()
         {
             setID();
+            labelBack.Visible = true;
             conn.Open();
             string valueTo = deleteIDTextBox.Text;
             if (flag == "AIRLINE")
@@ -316,6 +317,7 @@ namespace airlinesystem
 
         public void editRecords()
         {
+            labelBack.Visible = true;
             conn.Open();
             setID();
             string idToUpdated = deleteIDTextBox.Text;
@@ -369,6 +371,7 @@ namespace airlinesystem
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
+            labelBack.Visible = true;
             selectAttribute.Visible = false;
             labelBack.Visible = false;
             newValueBox.Visible = false;
